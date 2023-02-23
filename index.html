@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build CV</title>
+
+    <!-- fontawesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- google fonts - inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- html2canvas library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <!-- jsPDF library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+   
+    <link rel = "stylesheet" href = "style.css">
+
+    <script src="script.js"></script>
+
+    <title>Resume Generator</title>
+
+  </head>
+  <body>
+   
+
+     <!-- <header class = "header">
+            <nav class = "navbar navbar-expand-lg navbar-light bg-secondary">
+                <div class="container">
+                    <a class = "navbar-brand fw-bold fs-2" href = "index.html">
+                        <span>
+                            <i class = "fa-solid fa-file-invoice"></i>
+                        </span>
+                        <span class = "navbar-brand-text">Build</span> CV
+                    </a>
+                    <button class = "navbar-toggler" type = "button" data-bs-toggle = "collapse" data-bs-target = "#navbarContent" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </nav>
+
+            <div class="header-banner">
+                <div class="container h-100 d-flex align-items-center justify-content-center">
+                    <div class = "row text-center justify-content-center">
+                        <h1 class = "text-uppercase text-blue fw-6 lh-17 display-5">create your professional cv in just 5 <span class = "text-lowercase text-primary">minutes!</span></h1>
+                        <p class = "text-grey fs-4 mt-3 mb-5">Easy to use. Time-saver. Professional.</p>
+                        <!-- <button class = "btn btn-lg text-capitalize btn-primary btn-banner fs-4">let's get started</button> -->
+                    <!-- </div>
+                </div>
+            </div>
+      </header> --> 
+
+
+
+    <div id="cv-form">
+        <header class = "header">
+          <nav class = "navbar navbar-expand-lg navbar-light bg-secondary">
+              <div class="container">
+                  <a class = "navbar-brand fw-bold fs-2" href = "index.html">
+                      <span>
+                          <i class = "fa-solid fa-file-invoice"></i>
+                      </span>
+                      <span class = "navbar-brand-text">Build</span> CV
+                  </a>
+                  <!-- <button class = "navbar-toggler" type = "button" data-bs-toggle = "collapse" data-bs-target = "#navbarContent" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                  </button> -->
+              </div>
+          </nav>
+
+          <div class="header-banner">
+              <div class="container h-100 d-flex align-items-center justify-content-center">
+                  <div class = "row text-center justify-content-center">
+                      <h1 class = "text-uppercase text-blue fw-6 lh-17 display-5">create your professional cv <span class = " text-primary">Now!</span></h1>
+                      <p class = "text-grey fs-4 mt-3 mb-5">Easy to use. Time-saver. Professional.</p>
+                      <!-- <button class = "btn btn-lg text-capitalize btn-primary btn-banner fs-4">let's get started</button> -->
+                  </div>
+              </div>
+          </div>
+        </header>
+
+    <div class="container">
+      <header>Resume Information</header>
+      <br>
+      <br>
+    
+      <div class="card-body">
+        
+          <div class="row">
+            <div class="col-md-6">
+
+
+              <span class="title">Personal Information</span>
+              <br>
+              <div class="fields">
+                <div class="form-group ">
+                  <label for="nameField">Name</label>
+                  <input
+                    type="text"
+                    id="nameField"
+                    placeholder="Enter your name"
+                    class="form-control"
+                    required
+                  />
+                </div>
+
+                <div class="form-group mt-2 ">
+                  <label for="contactField">Contact</label>
+                  <input
+                    type="text"
+                    id="contactField"
+                    placeholder="Enter your contact number"
+                    class="form-control"
+                    required
+                  />
+                </div>
+
+                <div class="form-group mt-2 ">
+                  <label for="mailField">Email</label>
+                  <textarea
+                    id="mailField"
+                    placeholder="Enter your email"
+                    class="form-control"
+                  ></textarea>
+                </div>
+
+                <div class="form-group mt-2 ">
+                  <label for="addressField">Address</label>
+                  <textarea
+                    id="addressField"
+                    placeholder="Enter your address"
+                    class="form-control"
+                    rows="5"
+                  ></textarea>
+                </div>
+
+
+                <div class="form-group mt-3">
+                  <label for="">Choose your photo</label>
+                  <input id="imgField" type="file" class="form-control" />
+                </div>
+              </div>
+              <br>
+              
+
+              <span class="title">Social media links</span>
+
+              <div class="form-group mt-2">
+                <label for="fbField">Facebook </label>
+                <input
+                  type="text"
+                  id="fbField"
+                  placeholder="Enter here"
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group mt-2">
+                <label for="instaField">Instagram </label>
+                <input
+                  type="text"
+                  id="instaField"
+                  placeholder="Enter here"
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group mt-2">
+                <label for="linkedField">LinkedIn</label>
+                <input
+                  type="text"
+                  id="linkedField"
+                  placeholder="Enter here"
+                  class="form-control"
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <!-- second col -->
+              <span class="title">Professional Information</span>
+              <br>
+
+              <div class="form-group mt-2">
+                <label for="">Profile Summary</label>
+                <textarea
+                  id="objectiveField"
+                  rows="5"
+                  placeholder="Enter here"
+                  class="form-control"
+                  rows = "2"
+                ></textarea>
+              </div>
+
+              <div class="form-group mt-2" id="we">
+                <label for="">Work Experience</label>
+                <textarea
+                  placeholder="Enter here"
+                  class="form-control weField"
+                  rows="5"
+                ></textarea>
+
+                <!-- new textarea -->
+
+                <div class=" text-center mt-2" id="weAddButton">
+                  <button
+                    onclick="addNewWEField()"
+                    class="btn btn-primary btn-sm"
+                  >
+                    Add
+                  </button>
+                </div>
+              </div>
+
+              <div class="form-group mt-2" id="aq">
+                <label for="">Academic Qualification</label>
+                <textarea
+                  placeholder="Enter here"
+                  class="form-control eqField"
+                  rows = "5"
+                ></textarea>
+
+                <div class="text-center mt-2" id="aqAddButton">
+                  <button
+                    onclick="addNewAQField()"
+                    class="btn btn-primary btn-sm"
+                  >
+                    Add
+                  </button>
+                </div>
+              </div>
+
+
+              <div class="form-group mt-2" id="pr">
+                <label for="">Projects</label>
+                <textarea
+                  placeholder="Enter here"
+                  class="form-control prField"
+                  rows="5"
+                ></textarea>
+
+                <div class="text-center mt-2" id="prAddButton">
+                  <button
+                    onclick="addNewPRField()"
+                    class="btn btn-primary btn-sm"
+                  >
+                    Add
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <br>
+       
+
+          <div class="text-center mt-3">
+            <button onclick="generateCV()" class="btn btn-primary btn-lg">
+              Generate CV
+            </button>
+          </div>
+        </div>
+      </div class="card-body">
+    </div>
+  </div>
+  
+
+    <!-- cv template -->
+
+    <div class="container-t" id="cv-template">
+        <div class="row">
+          <div class="col-md-4 text-center py-5 background">
+            <!-- first col  -->
+    
+            <img
+              src="images/user.png"
+              alt=""
+              class="img-fluid myimg"
+              id="imgTemplate"
+            />
+            <br>
+            <br>
+            <div class="about">
+                <p id="nameT1">Vishaal Karthik B</p>
+                <p id="contactT">+91-7339360863</p>
+                <p id="mailT">vishaalkarthik104@gmail.com</p>
+                <p id="addressT">Madurai , INDIA</p>
+                <br>
+                <hr />
+                <br>
+                <p>
+                  <i class="fa-brands fa-facebook fa-2xl"></i>&nbsp;&nbsp;<a id="fbT" href="#1" target="_blank"
+                    >Vishaal Karthik B</a
+                  >
+                </p>
+                <p>
+                  <i class="fa-brands fa-instagram fa-2xl"></i>&nbsp;&nbsp;<a id="instaT" href="#1" target="_
+                  ">im_vk2002</a>
+                </p>
+                <p>
+                  <i class="fa-brands fa-github fa-2xl"></i>&nbsp;&nbsp;<a id="linkedT" href="#1" target="_blank"
+                    >Vishaal  Karthik B</a
+                  >
+                </p>
+                <br>
+                <hr>
+                <!-- <span class="title">Skills</span>
+                <p>Web designer</p>
+                <p>UI designer</p>
+                <p>App designer</p>
+                <hr />
+               
+                <span class="title">Hobbies</span>
+                <p>Reading</p>
+                <p>Gaming</p>
+                <p>Watching series</p> -->
+               
+    
+            </div>
+          </div>
+          
+          <div class="col-md-8 py-5">
+            <!-- second col  -->
+            <h1 id="nameT2" class="text-center" style="font-weight: 1000">
+              Vishaal Karthik B
+            </h1>
+    
+            <!-- objective card  -->
+    
+            <div class="card mt-4">
+              <div class="card-header background">
+                <span class="title">Profile Summary</span>
+              </div>
+              <div class="card-body">
+                <p id="objectiveT">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+                  quam quos totam dolorem commodi earum, labore consectetur
+                  excepturi reiciendis, a fugiat porro rem mollitia inventore
+                  eligendi, saepe libero hic aliquam? Iure molestias natus dolore
+                  animi, possimus eius! Atque nesciunt eveniet exercitationem enim
+                  nisi quis. Consequatur aliquam reiciendis officiis laboriosam
+                  numquam?
+                </p>
+              </div>
+            </div>
+    
+            <!-- work Experience -->
+    
+            <div class="card mt-4">
+              <div class="card-header background">
+                <span class="title">Work Experience</span>
+              </div>
+              <div class="card-body">
+                <ul id="weT">
+                  <li>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Odit, ad.
+                  </li>
+                  <li>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Odit, ad.
+                  </li>
+                  <li>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Odit, ad.
+                  </li>
+                </ul>
+              </div>
+            </div>
+    
+            <!-- academic Qualification  -->
+    
+            <div class="card mt-4">
+              <div class="card-header background">
+                <span class="title">Academic Qualification</span>
+              </div>
+              <div class="card-body">
+                <ul id="aqT">
+                  <li>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Odit, ad.
+                  </li>
+                  <li>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Odit, ad.
+                  </li>
+                  <li>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Odit, ad.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="card mt-4">
+                <div class="card-header background">
+                  <span class="title">Projects</span>
+                </div>
+                <div class="card-body">
+                  <ul id="prT">
+                    <li>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Odit, ad.
+                    </li>
+                    <li>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Odit, ad.
+                    </li>
+                    <li>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Odit, ad.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+    
+            <div class="mt-3 text-center">
+              <button onclick="printCV()" class="btn background">Print CV</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>

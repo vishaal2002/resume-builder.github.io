@@ -1,0 +1,147 @@
+:root{
+  --primary-color: #1966d2;
+  --secondary-color: #f0f4fd;
+  --dark-blue: #00004a;
+  --white-color: #fff;
+  --black-color: #000;
+  --grey-color: #4c5563;
+  --light-blue-color: #2e8dfb;
+  --transition: all 300ms ease-in-out;
+}
+
+body{
+  font-family: "Inter", sans-serif!important;
+  
+  
+}
+
+
+/* section title */
+.section-title p{
+  max-width: 600px;
+}
+
+/* navbar */
+.navbar{
+  height: 90px;
+  border-bottom: 2px solid #e7eefa;
+}
+.navbar-brand, .site-logo{
+  color: var(--primary-color)!important;
+}
+.navbar-brand .navbar-brand-text{
+  color: var(--dark-blue);
+}
+
+
+/* header */
+.header{
+  min-height: 100vh;
+  background-color: var(--secondary-color);
+}
+.header-banner{
+  height: calc(100vh - 90px);
+  font-family: "Inter", sans-serif!important;
+}
+.header-banner h1{
+  max-width: 900px;
+  font-size: 45px;
+  font-weight: 600;
+  color: #333;
+}
+.header-banner .btn-banner{
+  max-width: 280px;
+}
+
+
+.container{
+  max-width: 1500px;
+  width: 100%;
+  border-radius: 6px;
+  padding: 30px;
+  margin: 0 15px;
+  background-color: aqua;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+
+.container header{
+  position: relative;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+.container header::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 3px;
+  width: 27px;
+  border-radius: 8px;
+  background-color: #4070f4;
+}
+
+
+.container .title{
+  display: block;
+  margin-bottom: 8px;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 6px 0;
+  color: #333;
+  text-align: center;
+}
+
+label{
+  font-size: 14px;
+  font-weight: 500;
+  color: #2e2e2e;
+}
+
+body {
+  background-color: aqua;
+}
+
+.myimg {
+  /* border: 1px solid red; */
+  border-radius: 50%;
+  width: 200px;
+}
+
+.background {
+  background-color: #f4dcbb;
+}
+
+
+
+.container-t  .title{
+  display: block;
+  margin-bottom: 8px;
+  font-size: 25px;
+  font-weight: 600;
+  margin: 6px 0;
+  color: #333;
+  text-align: center;
+}
+
+.container-t p li{
+  font-family:'Trebuchet MS';
+  font-style: strong;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.container-t a{
+  text-decoration: none;
+}
+/* 
+#cv-form
+{
+  display: none;
+} */
+
+
+#cv-template {
+  display: none;
+}
